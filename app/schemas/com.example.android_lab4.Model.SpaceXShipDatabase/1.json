@@ -1,0 +1,236 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "f0241cfd23b1abf413c28063a07ad9c2",
+    "entities": [
+      {
+        "tableName": "SpaceXShip",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`digit_ship_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `ship_id` TEXT, `ship_name` TEXT, `ship_model` TEXT, `ship_type` TEXT, `roles` TEXT, `active` INTEGER NOT NULL, `imo` INTEGER NOT NULL, `mmsi` INTEGER NOT NULL, `abs` INTEGER NOT NULL, `class` INTEGER NOT NULL, `weight_lbs` INTEGER NOT NULL, `weight_kg` INTEGER NOT NULL, `year_built` INTEGER NOT NULL, `home_port` TEXT, `status` TEXT, `speed_kn` INTEGER NOT NULL, `course_deg` INTEGER NOT NULL, `position` TEXT, `successful_landings` INTEGER NOT NULL, `attempted_landings` INTEGER NOT NULL, `missions` TEXT, `url` TEXT, `image_url` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "digit_ship_id",
+            "columnName": "digit_ship_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ship_id",
+            "columnName": "ship_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ship_name",
+            "columnName": "ship_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ship_model",
+            "columnName": "ship_model",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ship_type",
+            "columnName": "ship_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "roles",
+            "columnName": "roles",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "active",
+            "columnName": "active",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imo",
+            "columnName": "imo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mmsi",
+            "columnName": "mmsi",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "abs",
+            "columnName": "abs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "_class",
+            "columnName": "class",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight_lbs",
+            "columnName": "weight_lbs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight_kg",
+            "columnName": "weight_kg",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "year_built",
+            "columnName": "year_built",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "home_port",
+            "columnName": "home_port",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "speed_kn",
+            "columnName": "speed_kn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "course_deg",
+            "columnName": "course_deg",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "successful_landings",
+            "columnName": "successful_landings",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attempted_landings",
+            "columnName": "attempted_landings",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "missions",
+            "columnName": "missions",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image_url",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "digit_ship_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "mission",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mission_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `flight` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mission_id",
+            "columnName": "mission_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "flight",
+            "columnName": "flight",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mission_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "position",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`position_id` INTEGER NOT NULL, `latitude` INTEGER NOT NULL, `longitude` INTEGER NOT NULL, PRIMARY KEY(`position_id`))",
+        "fields": [
+          {
+            "fieldPath": "position_id",
+            "columnName": "position_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "position_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f0241cfd23b1abf413c28063a07ad9c2')"
+    ]
+  }
+}
